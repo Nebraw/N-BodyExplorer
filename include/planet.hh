@@ -14,16 +14,16 @@ public:
 
 
   void set_Vx(long  double Vx);
-  void set_Vx(long  double Vx);
-  void set_Vx(long  double Vx);
+  void set_Vy(long  double Vx);
+  void set_Vz(long  double Vx);
 
   void add_Vx(long  double Ax);
   void add_Vy(long  double Ay);
   void add_Vz(long  double Az);
     
-  void set_Vx(long  double Vx);
-  void set_Vx(long  double Vx);
-  void set_Vx(long  double Vx);
+  void set_Px(long  double Vx);
+  void set_Py(long  double Vx);
+  void set_Pz(long  double Vx);
 
   void add_Px(long  double Vx);
   void add_Py(long  double Vy);
@@ -37,9 +37,17 @@ public:
   long double get_Vy();
   long double get_Vz();
 
+  int get_masse() const;
+  
+  static const unsigned planet_id()
+  {
+    static unsigned count = 0;
+    count++;
+    return count;
+  }
+
 private:
 
-  static const int planet_id();
 
   int masse_;
   unsigned id_;

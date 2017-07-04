@@ -1,5 +1,6 @@
 #include <scene.hh>
-
+#include <iostream>
+#include <memory>
 
 Scene::Scene()
 {
@@ -11,7 +12,7 @@ Scene::~Scene()
 
 }
 
-void Scene::add_planet(share_pointer<Planet> p)
+void Scene::add_planet(std::shared_ptr<Planet> p)
 {
   planets_.push_back(p);
 }
@@ -35,7 +36,6 @@ void Scene::update()
   frames_++;
     for (auto& i: planets_)
     {
-     long double  F = 0;
      long double Ax = 0;
      long double Ay = 0;
      long double Az = 0;
@@ -44,11 +44,11 @@ void Scene::update()
           if (i == j)
             continue;
 
-          long double  Dx = (j->get_X - i->get_X);
-          long double  Dy = (j->get_Y - i->get_Y);
-          long double  Dz = (j->get_Z - i->get_Z);
+          long double  Dx = (j->get_Px() - i->get_Px());
+          long double  Dy = (j->get_Py() - i->get_Py());
+          long double  Dz = (j->get_Pz() - i->get_Pz());
           
-          A = G * j->get_masse()/((Dx * Dx)+(Dy * Dy)+(Dz * Dz));
+          long double A = G * j->get_masse()/((Dx * Dx)+(Dy * Dy)+(Dz * Dz));
          
           long double dp = abs(Dx)+abs(Dy)+abs(Dz);
           Ax =A * (Dx) / dp;

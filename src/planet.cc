@@ -2,21 +2,24 @@
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
+#include <random>
+#include <cmath>
+#include <config.hh>
 
 Planet::Planet()
 {
   std::default_random_engine generator;
 
-  std::uniform_int_distribution<double> distributionmasse(1000,10000);
+  std::uniform_int_distribution<int> distributionmasse(1000,10000);
   masse_ = distributionmasse(generator);
   
-  std::uniform_int_distribution<double> distributionX(0,g_screen->screenX);
+  std::uniform_real_distribution<double> distributionX(0,g_screen->screenX);
   px_ =  distributionX(generator);
   
-  std::uniform_int_distribution<double> distributionY(0,g_screen->screenY);
+  std::uniform_real_distribution<double> distributionY(0,g_screen->screenY);
   py_ =  distributionY(generator);
 
-  std::uniform_int_distribution<double> distributionZ(0,g_screen->screenZ);
+  std::uniform_real_distribution<double> distributionZ(0,g_screen->screenZ);
   pz_ = distributionZ(generator);
   
   id_ = planet_id();
@@ -38,14 +41,6 @@ Planet::Planet(int masse,
   id_ = planet_id();
 }
 
-static const unsigned Planet::planet_id()
-{
-  static unsigned count = 0;
-
-  count++;
-
-  return count;
-}
 
 void Planet::print() const
 {
@@ -55,3 +50,7 @@ void Planet::print() const
             << ", posZ: " << pz_ << std::endl;              
 }
 
+int Planet::get_masse() const
+{
+  return masse_;
+}
