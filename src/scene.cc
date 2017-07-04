@@ -50,14 +50,17 @@ void Scene::update()
           
           A = G * j->get_masse()/((Dx * Dx)+(Dy * Dy)+(Dz * Dz));
          
-          long double dp = abs(Dx)+abs(Dy)+abs(Dz));
-          Ax =(A * (Dx) / dp;
+          long double dp = abs(Dx)+abs(Dy)+abs(Dz);
+          Ax =A * (Dx) / dp;
                     
-          Ay = (A * (Dy) / dp;
-            
+          Ay = A * (Dy) / dp;
+                
           Az = A * (Dz) / dp;
             
         }
+      i->add_Vx(Ax);
+      i->add_Vy(Ay);
+      i->add_Vz(Az);
     }
   
 }
