@@ -45,7 +45,7 @@ void Scene::check_collision(std::map<std::tuple<long, long, long>,std::shared_pt
 
 void Scene::print() const
 {
-  std::cout << "frames:" <<frames_ << std::endl;
+  std::cout << "\033[32m"<< "frames:" <<frames_ << "\033[m" << std::endl;
   for (auto& i: planets_)
   {
     i.second->print();

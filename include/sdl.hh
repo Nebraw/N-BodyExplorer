@@ -1,6 +1,6 @@
 #pragma once
-
-#include "main.hh"
+/*
+//#include "main.hh"
 
 #include "point.hh"
 #include <SDL2/SDL.h>
@@ -14,3 +14,4 @@ void line(s_point a, s_point b);
 extern struct conf* g_env;
 
 #include <iostream>
+*/

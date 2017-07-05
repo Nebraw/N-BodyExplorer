@@ -57,10 +57,12 @@ void Planet::update()
 
 void Planet::print() const
 {
-  std::cout <<"planete id:"<< id_ << std::endl
-            << "posX: " << px_
+  std::cout << "\033[31m" << "planete id:"<< id_ << std::endl
+            << "\033[m" << "posX: " << px_
             << ", posY: " << py_
-            << ", posZ: " << pz_ << std::endl;
+            << ", posZ: " << pz_
+            << ", masse: " << masse_
+            << std::endl;
 }
 
 int Planet::get_masse() const

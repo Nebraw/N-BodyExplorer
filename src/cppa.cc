@@ -28,8 +28,8 @@ static void start()
 {
   using namespace std::chrono_literals;
   Scene scene;
-  scene.add_planet(std::make_shared<Planet>(8000, 0, 0, 0, 1, 1, 1));
-  scene.add_planet(std::make_shared<Planet>(5000, 10, 5, 3, -1.5, 1.5, 1.5));
+  scene.add_planet(std::make_shared<Planet>(8000, -200, 0, 0, 1, 0, 0));
+  scene.add_planet(std::make_shared<Planet>(8000, 200, 0, 0, -1, 0, 0));
   while (1)
   {
     scene.update();

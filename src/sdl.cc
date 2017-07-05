@@ -1,4 +1,4 @@
-#include "sdl.hh"
+/*#include "sdl.hh"
 #include <unistd.h>
 
 void line(SDL_Surface* screen, s_point a, s_point b)
@@ -167,3 +167,4 @@ int draw(s_point** schape)
   sleep(g_env->time);
   return 0;
 }
+*/
