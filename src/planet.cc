@@ -6,7 +6,6 @@
 #include <random>
 #include <cmath>
 #include <config.hh>
-
 Planet::Planet()
 {
   std::default_random_engine generator;

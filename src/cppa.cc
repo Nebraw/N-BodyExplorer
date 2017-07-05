@@ -1,13 +1,13 @@
 #include <scene.hh>
 #include <planet.hh>
 
-#include <config.hh>
 #include <string>
 #include <fstream>
 #include <memory>
+#include <config.hh>
 
 static void start();
-
+ struct screen_size* g_screen;
 int main()
 {
   std::ifstream ifs("config.txt");

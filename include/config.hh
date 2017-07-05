@@ -6,4 +6,4 @@ struct screen_size
   double screenY = 100;
   double screenZ = 100;
 };
-struct screen_size* g_screen;
+extern struct screen_size* g_screen;
