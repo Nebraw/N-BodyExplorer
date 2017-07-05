@@ -12,13 +12,13 @@ int main()
 {
   std::ifstream ifs("config.txt");
   std::string str;
-  struct screen_size* g_stream = new struct screen_size;
+  g_screen = new struct screen_size;
   ifs >> str;
-  g_stream->screenX = std::stoi(str);
+  g_screen->screenX = std::stoi(str);
   ifs >> str;
-  g_stream->screenY = std::stoi(str);
+  g_screen->screenY = std::stoi(str);
   ifs >> str;
-  g_stream->screenZ = std::stoi(str);
+  g_screen->screenZ = std::stoi(str);
   start();
 }
 
