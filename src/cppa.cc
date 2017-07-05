@@ -29,5 +29,6 @@ static void start()
   while (1)
   {
     scene.update();
+    scene.print();
   }
 }
