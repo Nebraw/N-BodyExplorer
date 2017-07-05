@@ -50,7 +50,7 @@ void Scene::update()
           
           long double A = G * j->get_masse()/((Dx * Dx)+(Dy * Dy)+(Dz * Dz));
          
-          long double dp = abs(Dx)+abs(Dy)+abs(Dz);
+          long double dp = std::abs(Dx)+std::abs(Dy)+std::abs(Dz);
           Ax =A * (Dx) / dp;
                     
           Ay = A * (Dy) / dp;
