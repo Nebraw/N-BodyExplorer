@@ -9,7 +9,7 @@ public:
          double vx, double vy, double vz);
 
   void print() const;
-
+  void update();
 
   void set_Vx(long  double Vx);
   void set_Vy(long  double Vx);
@@ -18,7 +18,8 @@ public:
   void add_Vx(long  double Ax);
   void add_Vy(long  double Ay);
   void add_Vz(long  double Az);
-    
+  void add_V(long double Ax, long double Ay, long double Az);
+
   void set_Px(long  double Vx);
   void set_Py(long  double Vx);
   void set_Pz(long  double Vx);
@@ -36,7 +37,7 @@ public:
   long double get_Vz();
 
   int get_masse() const;
-  
+
   static const unsigned planet_id()
   {
     static unsigned count = 0;
@@ -49,11 +50,11 @@ private:
 
   int masse_;
   unsigned id_;
-  
+
   long double px_;
   long double py_;
   long double pz_;
-  
+
   long  double vx_ = 0;
   long  double vy_ = 0;
   long double vz_ = 0;
@@ -129,30 +130,30 @@ inline void Planet::add_Pz(long  double Vz)
 //--------------get Px-------------------//
 
 inline long double Planet::get_Px()
-  {
-    return px_;
-  }
+{
+  return px_;
+}
 inline long double Planet::get_Py()
-  {
-    return py_;
-  }
+{
+  return py_;
+}
 
 inline long double Planet::get_Pz()
-  {
-    return pz_;
-  }
+{
+  return pz_;
+}
 //--------------get Vx-------------------//
 
 inline long double Planet::get_Vx()
-  {
-    return vx_;
-  }
+{
+  return vx_;
+}
 inline long double Planet::get_Vy()
-  {
-    return vy_;
-  }
+{
+  return vy_;
+}
 
 inline long double Planet::get_Vz()
-  {
-    return vz_;
-  }
+{
+  return vz_;
+}
