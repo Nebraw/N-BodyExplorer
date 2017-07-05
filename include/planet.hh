@@ -37,7 +37,7 @@ public:
   long double get_Vz();
 
   int get_masse() const;
-
+  void set_masse(int m);
   static const unsigned planet_id()
   {
     static unsigned count = 0;
@@ -156,4 +156,11 @@ inline long double Planet::get_Vy()
 inline long double Planet::get_Vz()
 {
   return vz_;
+}
+
+//----------set masse---------------------//
+
+inline void Planet::set_masse(int m)
+{
+  masse_= m;
 }

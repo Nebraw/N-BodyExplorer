@@ -4,6 +4,8 @@
 #include <string>
 #include <fstream>
 #include <memory>
+#include <chrono>
+#include <thread>
 #include <config.hh>
 
 static void start();
@@ -24,11 +26,14 @@ int main()
 
 static void start()
 {
+  using namespace std::chrono_literals;
   Scene scene;
-  scene.add_planet(std::make_shared<Planet>(5000, 0, 0, 0, 10, 10, 10));
+  scene.add_planet(std::make_shared<Planet>(8000, 0, 0, 0, 1, 1, 1));
+  scene.add_planet(std::make_shared<Planet>(5000, 10, 5, 3, -1.5, 1.5, 1.5));
   while (1)
   {
     scene.update();
     scene.print();
+    std::this_thread::sleep_for(100ms);
   }
 }
