@@ -1,6 +1,7 @@
 #include <scene.hh>
 #include <iostream>
 #include <memory>
+#include <cmath>
 
 Scene::Scene()
 {
