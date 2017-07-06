@@ -12,6 +12,7 @@ public:
   void add_planet(std::shared_ptr<Planet> p);
   void print() const;
   void update();
+  int display_planet(float scale);
 private:
   void check_collision(std::map<std::tuple<long, long, long>, std::shared_ptr<Planet>>& systems,
                        std::tuple<long, long, long>& key,

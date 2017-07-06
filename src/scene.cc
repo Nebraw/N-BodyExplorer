@@ -2,7 +2,8 @@
 #include <iostream>
 #include <memory>
 #include <cmath>
-
+#include <SDL/SDL.h>
+#include <SDL/SDL_gfxPrimitives.h>
 /*#include <thread>
 #include <mutex>
 */
@@ -86,4 +87,17 @@ void Scene::update()
     check_collision(systems, key, pi);
   }
   planets_ = systems;
+}
+
+int Scene::display_planet(float scale)
+{
+  int retcode = 0;
+  for(auto& i: planets_)
+  {
+    int r = (int)(i.second->get_masse() * scale);
+    retcode += filledEllipseRGBA(i.second->get_Px(),
+        i.second->get_Py(), r, r,
+        42, 0, 200, 255);
+  }
+  return retcode;
 }

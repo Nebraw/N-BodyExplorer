@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -pedantic -std=c++14 -I include
+CXXFLAGS = -Wall -Wextra -pedantic -std=c++14 -I include 'sdl-config --libs'
 SRC = src/*.cc
 HEAD = include/*.hh
 EXE = cppa
