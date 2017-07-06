@@ -14,7 +14,11 @@ public:
   void add_planet(std::shared_ptr<Planet> p);
   void print() const;
   void update();
-  int display_planet(float scale, SDL_Surface* surface);
+  int display_planet(float scale, int x, int y);
+  void set_sdl_surface(SDL_Surface* surf)
+  {
+    this->surf = surf;
+  }
 private:
   void check_collision(std::map<std::tuple<long, long, long>, std::shared_ptr<Planet>>& systems,
                        std::tuple<long, long, long>& key,
@@ -22,5 +26,5 @@ private:
  static  constexpr long double G = 0.00000000000667408;
   std::map<std::tuple<long,long,long>,std::shared_ptr<Planet>>planets_;
   long frames_;
-  
+  SDL_Surface *surf;
 };

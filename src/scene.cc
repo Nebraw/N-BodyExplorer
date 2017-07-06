@@ -89,15 +89,26 @@ void Scene::update()
   planets_ = systems;
 }
 
-int Scene::display_planet(float scale, SDL_Surface* surface)
+int Scene::display_planet(float scale, int x, int y)
 {
   int retcode = 0;
+  SDL_FillRect(surf, NULL, SDL_MapRGB(surf->format, 50, 50, 50));
+  int component = 255 / planets_.size();
+  printf("planet component %d\n", component);
+  int c_r = 0;
+  int c_g = 0;
+  int c_b = 0;
   for(auto& i: planets_)
   {
-    int r = (int)(i.second->get_masse() * scale);
-    retcode += filledEllipseRGBA(surface, i.second->get_Px(),
-        i.second->get_Py(), r, r,
-        42, 0, 200, 255);
+    c_r = c_b == c_g ? component : c_r;
+    c_g = c_r == c_b ? component : c_g;
+    c_b = c_r == c_g ? component : c_b;
+    component += component;
+    int r = i.second->get_masse() / scale;
+    retcode += filledEllipseRGBA(surf, i.second->get_Px() + x/2,
+        i.second->get_Py() + y/2, r, r,
+        c_r, c_g, c_b, 255);
   }
+  retcode += SDL_Flip(surf);
   return retcode;
 }
