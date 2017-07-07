@@ -53,8 +53,8 @@ static void start(int argc, char** argv)
   {
     if(SDL_PollEvent(&event) && event.type == SDL_QUIT)
       SDL_Quit();
-    scene.display_planet(800, WINDOW_WIDTH, WINDOW_HEIGHT);
     scene.update();
+    scene.display_planet(800, WINDOW_WIDTH, WINDOW_HEIGHT);
     scene.print();
     std::this_thread::sleep_for(100ms);
   }

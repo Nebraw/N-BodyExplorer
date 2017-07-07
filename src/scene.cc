@@ -105,7 +105,7 @@ void Scene::update()
   count_ = planets_.size();
   for (auto& i: planets_)
   {
-    ioservice_.post(boost::bind(&Scene::calcule,boost::ref(*this), i, systems));
+    ioservice_.post(boost::bind(&Scene::calcule,boost::ref(*this), boost::ref(i), boost::ref(systems)));
   }
   while (count_ != 0)
     cv_.wait(locked);
