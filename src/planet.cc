@@ -60,8 +60,11 @@ void Planet::print() const
   std::cout << "\033[31m" << "planete id:"<< id_ << std::endl
             << "\033[m" << "posX: " << px_
             << ", posY: " << py_
-            << ", posZ: " << pz_
-            << ", masse: " << masse_
+            << ", posZ: " << pz_ << std::endl
+            << "vitX: " << vx_
+            << ", vitY: " << vy_
+            << ", vitZ: " << vz_ << std::endl
+            << "masse: " << masse_
             << std::endl;
 }
 

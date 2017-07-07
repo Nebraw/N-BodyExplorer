@@ -38,7 +38,7 @@ public:
 
   int get_masse() const;
   void set_masse(int m);
-  static const unsigned planet_id()
+  static  unsigned planet_id()
   {
     static unsigned count = 0;
     count++;
