@@ -7,4 +7,15 @@ Make
 
 ./cppa fichiers [fichiers]*
 
-le fichier config.txt permet de modifier les dimension de la fenêtres et si on veut modidfier la constant gravitationnelle
+
+Syntaxe fichier config.txt
+SizeX SizeY SizeZ multi_gravit.
+
+le fichier config.txt contient les dimension d'affichage et ensuite de motifier la constant
+gravitationnel comme bon vous semble.
+
+Si aucune valeur n'est donne pour la constant multiplicative gravitationnel elle se mettra a 1
+
+/------------------------------------------------------\
+Syntax fichier planets
+Masse PosX PosY PosZ VitX VitY VitZ 

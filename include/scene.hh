@@ -27,7 +27,8 @@ public:
   {
     this->surf = surf;
   }
-  
+  void gravite(const long double mult);
+
   void calcule(std::pair<const std::tuple<long, long, long>, std::shared_ptr<Planet>>& i,
                std::map<std::tuple<long, long, long>, std::shared_ptr<Planet>>& systems);
 private:
@@ -35,9 +36,11 @@ private:
                        std::tuple<long, long, long>& key,
                        std::shared_ptr<Planet> &p);
  static  constexpr long double G = 0.00000000000667408;
+  long double mult_;
   std::map<std::tuple<long,long,long>,std::shared_ptr<Planet>>planets_;
   long frames_;
   SDL_Surface *surf;
+  
   boost::asio::io_service ioservice_;
   boost::asio::io_service::work ioservicework_;
   boost::thread_group threadpool_;

@@ -51,6 +51,10 @@ void Scene::check_collision(std::map<std::tuple<long, long, long>,std::shared_pt
     }
   //  guard.unlock();
 }
+void Scene::gravite(long double mult)
+{
+  mult_ = mult * G; 
+}
 
 void Scene::print() const
 {
@@ -79,7 +83,7 @@ void Scene::calcule(std::pair<const std::tuple<long, long, long>, std::shared_pt
       long double  Dy = (pj->get_Py() - pi->get_Py());
       long double  Dz = (pj->get_Pz() - pi->get_Pz());
       
-      long double A = G * pj->get_masse()/((Dx * Dx)+(Dy * Dy)+(Dz * Dz));
+      long double A = mult_ * pj->get_masse()/((Dx * Dx)+(Dy * Dy)+(Dz * Dz));
       
       long double dp = std::abs(Dx)+std::abs(Dy)+std::abs(Dz);
       
