@@ -1,21 +1,24 @@
-Le problème à N corps consiste à résoudre les équations du mouvement de Newton de N corps interagissant gravitationnellement, connaissant leurs masses ainsi que leurs positions et vitesses initiales.
+The N-body problem involves solving Newton's equations of motion for N gravitationally interacting bodies, knowing their masses and initial positions and velocities.
 
-Il s'agit d'un problème mathématique fondamental pour l'astronomie classique, c’est-à-dire dans le cas où les effets de la relativité générale peuvent être négligés : vitesses des corps petites devant la vitesse de la lumière dans le vide, et champs de gravitation faibles, ce qui est essentiellement le cas dans le Système solaire.
+This is a fundamental mathematical problem for classical astronomy, i.e. where the effects of general relativity can be neglected:
+body velocities small compared to the speed of light in vacuum, and weak gravitational fields, which is essentially the case in the Solar System.
 
-Fonctionnement:
+
+This project is a small cpp simulation of the interaction of several celestial bodies, allowing us to “recreate” the solar system.
+How it works:
 Make
 
-./cppa fichiers [fichiers]*
+./cppa files [files]*
 
 
-Syntaxe fichier config.txt
+Syntax config.txt file
 SizeX SizeY SizeZ multi_gravit.
 
-le fichier config.txt contient les dimension d'affichage et ensuite de motifier la constant
-gravitationnel comme bon vous semble.
+the config.txt file contains the display dimensions and then pattern the constant
+as you see fit.
 
-Si aucune valeur n'est donne pour la constant multiplicative gravitationnel elle se mettra a 1
+If no value is given for the multiplicative gravitational constant, it will be set to 1.
 
 /------------------------------------------------------\
-Syntax fichier planets
-Masse PosX PosY PosZ VitX VitY VitZ 
+Syntax planets file
+Mass PosX PosY PosZ VitX VitY VitZ 
